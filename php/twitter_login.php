@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Noa Lea
- * Date: 6/11/2018
- * Time: 11:58 AM
- */
 
 require_once '../twitteroauth/autoload.php';
 use Abraham\TwitterOAuth\TwitterOAuth;
@@ -14,17 +8,17 @@ session_start();
 $config = require_once 'config.php';
 
 // create TwitterOAuth object
-$twitteroauth = new TwitterOAuth($config['consumer_key'], $config['consumer_secret']);
+$connection = new TwitterOAuth($config['consumer_key'], $config['consumer_secret']);
 
 // request token of application
-$request_token = $twitteroauth->oauth(
+$request_token = $connection->oauth(
     'oauth/request_token', [
         'oauth_callback' => $config['url_callback']
     ]
 );
 
 // throw exception if something gone wrong
-if($twitteroauth->getLastHttpCode() != 200) {
+if($connection->getLastHttpCode() != 200) {
     throw new \Exception('There was a problem performing this request');
 }
 
@@ -32,8 +26,9 @@ if($twitteroauth->getLastHttpCode() != 200) {
 $_SESSION['oauth_token'] = $request_token['oauth_token'];
 $_SESSION['oauth_token_secret'] = $request_token['oauth_token_secret'];
 
+
 // generate the URL to make request to authorize our application
-$url = $twitteroauth->url(
+$url = $connection->url(
     'oauth/authorize', [
         'oauth_token' => $request_token['oauth_token']
     ]

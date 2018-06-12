@@ -8,10 +8,10 @@
 
 return [
     //
-    'consumer_key'      => '64D2gvcZvZ2yD9D0uMusnY1qT',
-    'consumer_secret'   => 'Byry89Sg4oX8eZsPyBE52GTI96CtUxxdM6H8vlQYkUbyvwhiRC',
+    'consumer_key'      => 'JvVtakFZvdnzhJxHuL6qIcT0H',
+    'consumer_secret'   => 'u11FgvQIlJWg17PRAsRN2GZDvV8JiQ6dwWkicWAcUpq6WLxatX',
 
     //
-    'url_login'         => 'http://codeyourfreedom.com/Samply_Scheduler/php/twitter_login.php',
-    'url_callback'      => 'http://codeyourfreedom.com/Samply_Scheduler/php/twitter_callback.php',
+    'url_login'         => 'http://codeyourfreedom.com/scheduler/php/twitter_login.php',
+    'url_callback'      => 'http://codeyourfreedom.com/scheduler/php/twitter_callback.php',
 ];
