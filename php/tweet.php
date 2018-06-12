@@ -6,6 +6,11 @@
  * Time: 12:33 PM
  */
 
+$data = file_get_contents("php://input");
+$receivedData = json_decode($data);
+
+$status = $receivedData->status;
+
 require_once '../twitteroauth/autoload.php';
 use Abraham\TwitterOAuth\TwitterOAuth;
 
@@ -24,8 +29,8 @@ $twitter = new TwitterOAuth(
 
 $status = $twitter->post(
     "statuses/update", [
-        "status" => "..."
+        "status" => $status
     ]
 );
 
-echo ('Created new status with #' . $status->id . PHP_EOL);
+echo json_encode('Created new status with #' . $status->id);
