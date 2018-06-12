@@ -8,10 +8,10 @@
 
 return [
     //
-    'consumer_key'      => 'JvVtakFZvdnzhJxHuL6qIcT0H',
-    'consumer_secret'   => 'u11FgvQIlJWg17PRAsRN2GZDvV8JiQ6dwWkicWAcUpq6WLxatX',
+    'consumer_key'      => 'CONSUMER_KEY',
+    'consumer_secret'   => 'CONSUMER_KEY_SECRET',
 
     //
-    'url_login'         => 'http://codeyourfreedom.com/scheduler/php/twitter_login.php',
-    'url_callback'      => 'http://codeyourfreedom.com/scheduler/php/twitter_callback.php',
+    'url_login'         => 'PATH_TO_TWITTER_LOGIN',
+    'url_callback'      => 'PATH_TO_TWITTER_CALLBACK',
 ];
