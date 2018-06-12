@@ -5,7 +5,7 @@
  * Date: 6/11/2018
  * Time: 12:02 PM
  */
-
+header('Content-Type: text/html; charset=utf-8');
 require_once '../twitteroauth/autoload.php';
 use Abraham\TwitterOAuth\TwitterOAuth;
 
@@ -69,8 +69,7 @@ if (mysqli_num_rows($check) > 0){
     mysqli_query($db, $insert);
 }
 
-
-
+$_SESSION['screen_name'] = $user->screen_name;
 
 // and redirect
-//header('Location: http://codeyourfreedom.com/scheduler/');
+header('Location: http://codeyourfreedom.com/scheduler/');
