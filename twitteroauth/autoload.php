@@ -26,8 +26,8 @@ spl_autoload_register(function ($class) {
 
     // replace the namespace prefix with the base directory, replace namespace
     // separators with directory separators in the relative class name, append
-    // with connect.php
-    $file = $base_dir . str_replace('\\', '/', $relative_class) . 'connect.php';
+    // with .php
+    $file = $base_dir . str_replace('\\', '/', $relative_class) . '.php';
 
     // if the file exists, require it
     if (file_exists($file)) {
