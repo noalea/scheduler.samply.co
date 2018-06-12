@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+
+<?php require_once 'php/functions.php' ?>
+
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -11,8 +14,13 @@
 <div class="container">
     <h1>Samply Scheduler</h1>
     <p>Free to use.</p>
-    <a href="php/twitter_login.php">Sign in to Twitter</a>
-    <a href="php/tweet.php">Tweet Random!</a>
+    <?php
+        if (isLoggedIn()) {
+            include 'php/includes/Schedule.php';
+        } else {
+            include 'php/includes/SignIn.php';
+        }
+    ?>
 </div>
 
 
