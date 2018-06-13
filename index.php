@@ -7,6 +7,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title>samply.scheduler</title>
     <link rel="icon" href="favicon.png" type="image/png" sizes="32x32">
+    <link href="https://unpkg.com/filepond/dist/filepond.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -25,6 +26,10 @@
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!-- Get FilePond polyfills from the CDN -->
+<script src="https://unpkg.com/filepond-polyfill/dist/filepond-polyfill.js"></script>
+<!-- Get FilePond JavaScript from the CDN -->
+<script src="https://unpkg.com/filepond/dist/filepond.js"></script>
 <script src="js/js.cookie.min.js"></script>
 <script src="js/scheduler.js"></script>
 

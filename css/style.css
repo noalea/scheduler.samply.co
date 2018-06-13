@@ -39,15 +39,17 @@ html, body {
     margin: 40px 0;
 }
 
-.tweetnow input {
+.tweetnow > input[type="text"] {
     border-radius: 8px;
     border-color: #1B95E0;
     padding: 8px;
     font-family: 'Work Sans', sans-serif;
     display: block;
     width: 100%;
+    font-size: 1rem;
+    margin-bottom: 26px;
 }
-.tweetnow button {
+.tweetnow > button {
     border-radius: 100px;
     box-shadow: none;
     cursor: pointer;
