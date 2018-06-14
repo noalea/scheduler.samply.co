@@ -50,13 +50,13 @@ $status = $twitter->post('statuses/update', $parameters);
 
 $user = $_COOKIE['screen_name'];
 
-$select = "SELECT `uid` FROM users WHERE t_username='".$user."'";
+$select = "SELECT `uid` FROM Users WHERE t_username='".$user."'";
 $get = mysqli_query($db, $select);
 $row = mysqli_fetch_row($get);
 $uid = $row[0];
 
 // add status->id & screen_name to db
-$insert = "INSERT INTO tweets (uid, tweet_id)
+$insert = "INSERT INTO Tweets (uid, tweet_id)
                   VALUES ('$uid', '$status->id')";
 mysqli_query($db, $insert);
 
