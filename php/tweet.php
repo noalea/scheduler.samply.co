@@ -48,11 +48,16 @@ $parameters = [
 
 $status = $twitter->post('statuses/update', $parameters);
 
-$user = $_SESSION['screen_name'];
+$user = $_COOKIE['screen_name'];
+
+$select = "SELECT `uid` FROM users WHERE t_username='".$user."'";
+$get = mysqli_query($db, $select);
+$row = mysqli_fetch_row($get);
+$uid = $row[0];
 
 // add status->id & screen_name to db
-$insert = "INSERT INTO tweets (username, tweet_id)
-                  VALUES ('$user', '$status->id')";
+$insert = "INSERT INTO tweets (uid, tweet_id)
+                  VALUES ('$uid', '$status->id')";
 mysqli_query($db, $insert);
 
-echo json_encode($status);
+echo json_encode($status->id);

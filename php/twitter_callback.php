@@ -59,17 +59,17 @@ $check = mysqli_query($db, $select);
 if (mysqli_num_rows($check) > 0){
     // user exists : update db
     $update = "UPDATE users 
-               SET username='$user->screen_name', name='$user->name', picture='$user->profile_background_image_url_https'
+               SET t_username='$user->screen_name', name='$user->name', picture='$user->profile_background_image_url_https'
                WHERE oauth_token='".$oauth_token."'";
     mysqli_query($db, $update);
 } else {
     // user is new : insert into db
-    $insert = "INSERT INTO users (oauth_token, oauth_token_secret, username, name, picture)
+    $insert = "INSERT INTO users (oauth_token, oauth_token_secret, t_username, name, picture)
                VALUES ('$oauth_token', '$oauth_token_secret', '$user->screen_name', '$user->name', '$user->profile_background_image_url_https')";
     mysqli_query($db, $insert);
 }
 
-$_SESSION['screen_name'] = $user->screen_name;
+setcookie('screen_name', $user->screen_name, time() + (86400 * 30), "/");
 
 // and redirect
 header('Location: http://codeyourfreedom.com/scheduler/');

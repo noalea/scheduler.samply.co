@@ -9,6 +9,6 @@
 session_start();
 
 function isLoggedIn() {
-    return isset($_SESSION['screen_name']) ? true : false;
+    return isset($_COOKIE['screen_name']) ? true : false;
 }
 

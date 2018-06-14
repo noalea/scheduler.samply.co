@@ -6,6 +6,7 @@
  * Time: 3:03 PM
  */
 
+setcookie("screen_name", "", time() - 3600, "/");
 session_start();
 session_destroy();
 session_unset();
