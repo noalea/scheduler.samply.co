@@ -8,6 +8,7 @@
     <title>samply.scheduler</title>
     <link rel="icon" href="favicon.png" type="image/png" sizes="32x32">
     <link href="https://unpkg.com/filepond/dist/filepond.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -30,6 +31,7 @@
 <script src="https://unpkg.com/filepond-polyfill/dist/filepond-polyfill.js"></script>
 <!-- Get FilePond JavaScript from the CDN -->
 <script src="https://unpkg.com/filepond/dist/filepond.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 <script src="js/js.cookie.min.js"></script>
 <script src="js/scheduler.js"></script>
 
