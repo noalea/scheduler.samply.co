@@ -20,13 +20,14 @@ session_start();
 $db = require_once 'db/conn.php';
 $config = require_once 'config.php';
 
-$token = $_SESSION['token'];
+$oauth_token = $_COOKIE['oauth_token'];
+$oauth_token_secret = $_COOKIE['oauth_token_secret'];
 
 $twitter = new TwitterOAuth(
     $config['consumer_key'],
     $config['consumer_secret'],
-    $token['oauth_token'],
-    $token['oauth_token_secret']
+    $oauth_token,
+    $oauth_token_secret
 );
 
 $media = array();

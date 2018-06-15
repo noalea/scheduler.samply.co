@@ -39,7 +39,8 @@ $token = $connection->oauth(
     ]
 );
 
-$_SESSION['token'] = $token;
+//$_SESSION['token'] = $token;
+
 
 $oauth_token = $token['oauth_token'];
 $oauth_token_secret = $token['oauth_token_secret'];
@@ -70,6 +71,8 @@ if (mysqli_num_rows($check) > 0){
 }
 
 setcookie('screen_name', $user->screen_name, time() + (86400 * 30), "/");
+setcookie('oauth_token', $token['oauth_token'], time() + (86400 * 30), "/");
+setcookie('oauth_token_secret', $token['oauth_token_secret'], time() + (86400 * 30), "/");
 
 // and redirect
 header('Location: http://codeyourfreedom.com/scheduler/');

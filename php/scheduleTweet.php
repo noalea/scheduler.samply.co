@@ -19,12 +19,10 @@ session_start();
 $db = require_once 'db/conn.php';
 $config = require_once 'config.php';
 
-$token = $_SESSION['token'];
-
 $consumer_key = $config['consumer_key'];
 $consumer_secret = $config['consumer_secret'];
-$oauth_token = $token['oauth_token'];
-$oauth_token_secret = $token['oauth_token_secret'];
+$oauth_token = $_COOKIE['oauth_token'];
+$oauth_token_secret = $_COOKIE['oauth_token_secret'];
 
 $user = $_COOKIE['screen_name'];
 
