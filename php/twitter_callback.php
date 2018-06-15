@@ -53,21 +53,36 @@ $user_connection = new TwitterOAuth(
 );
 $user = $user_connection->get("account/verify_credentials");
 
+$selectUID = "SELECT `uid` FROM Users WHERE t_username='".$user->screen_name."'";
+$get = mysqli_query($db, $selectUID);
+$row = mysqli_fetch_row($get);
+$uid = $row[0];
+
 // check
-$select = "SELECT * FROM Users WHERE oauth_token='".$oauth_token."'";
+$select = "SELECT * FROM Users WHERE uid='".$uid."'";
 $check = mysqli_query($db, $select);
 
 if (mysqli_num_rows($check) > 0){
     // user exists : update db
     $update = "UPDATE Users 
-               SET t_username='$user->screen_name', name='$user->name', picture='$user->profile_background_image_url_https'
+               SET t_username='$user->screen_name', name='$user->name', picture='$user->profile_image_url'
                WHERE oauth_token='".$oauth_token."'";
     mysqli_query($db, $update);
 } else {
-    // user is new : insert into db
-    $insert = "INSERT INTO Users (oauth_token, oauth_token_secret, t_username, name, picture)
-               VALUES ('$oauth_token', '$oauth_token_secret', '$user->screen_name', '$user->name', '$user->profile_background_image_url_https')";
+    // user is new : insert info into db
+    $insert = "INSERT INTO Users (t_username, name, picture)
+               VALUES ('$user->screen_name', '$user->name', '$user->profile_image_url')";
     mysqli_query($db, $insert);
+
+    $selectUID = "SELECT `uid` FROM Users WHERE t_username='".$user->screen_name."'";
+    $get = mysqli_query($db, $selectUID);
+    $row = mysqli_fetch_row($get);
+    $uid = $row[0];
+
+    // user is new : insert tokens into db
+    $insertTokens = "INSERT INTO TwitterTokens (uid, oauth_token, oauth_token_secret)
+               VALUES ('$uid', '$oauth_token', '$oauth_token_secret')";
+    mysqli_query($db, $insertTokens);
 }
 
 setcookie('screen_name', $user->screen_name, time() + (86400 * 30), "/");

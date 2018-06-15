@@ -41,27 +41,8 @@ foreach ($images as $key => $img) {
 }
 
 // add schedule info
-$insert = "INSERT INTO TweetSchedule (uid, consumer_key, consumer_secret, oauth_token, oauth_token_secret, status, media, on_day, on_time)
-                  VALUES ('$uid', '$consumer_key', '$consumer_secret', '$oauth_token', '$oauth_token_secret', '$status', '$media', '$day', '$time')";
+$insert = "INSERT INTO TweetSchedule (uid, status, media, on_day, on_time)
+                  VALUES ('$uid', '$status', '$media', '$day', '$time')";
 mysqli_query($db, $insert);
-
-
-
-//
-//$media_ids = array();
-//foreach ($media as $m) {
-//    array_push($media_ids, $m->media_id_string);
-//}
-//
-//$parameters = [
-//    'status' => $status,
-//    'media_ids' => implode(',', $media_ids)
-//];
-//
-//$status = $twitter->post('statuses/update', $parameters);
-//
-
-//
-
 
 echo json_encode('Scheduled');
