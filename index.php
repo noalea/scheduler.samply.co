@@ -12,8 +12,8 @@ require_once 'php/functions.php'
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title>samply.scheduler</title>
     <link rel="icon" href="favicon.png" type="image/png" sizes="32x32">
-    <link href="https://unpkg.com/filepond/dist/filepond.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link href="css/filepond.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/flatpickr.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -33,9 +33,9 @@ require_once 'php/functions.php'
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <!-- Get FilePond polyfills from the CDN -->
-<script src="https://unpkg.com/filepond-polyfill/dist/filepond-polyfill.js"></script>
+<script src="js/filepond-polyfill.js"></script>
 <!-- Get FilePond JavaScript from the CDN -->
-<script src="https://unpkg.com/filepond/dist/filepond.js"></script>
+<script src="js/filepond.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 <script src="js/js.cookie.min.js"></script>
 <script src="js/scheduler.js"></script>

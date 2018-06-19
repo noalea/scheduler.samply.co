@@ -81,9 +81,29 @@ var scheduler = (function () {
         });
     }
 
+    function open(e) {
+        var id, name;
+        id = e.currentTarget.id;
+        name = id.split("-")[0];
+        $("." + name + "-container").addClass("open");
+    }
+
+    function close(e) {
+        var target;
+        target = e.target.classList[0];
+        if (target === "tweetnow-container" || target === "tweetlater-container") {
+            $("." + target).addClass("close");
+            setTimeout(function () {
+                $("." + target).removeClass("open close");
+            }, 2000);
+        }
+    }
+
     function setupEventListeners() {
         $(".tweetnow button").click(tweetNow);
         $(".tweetlater button").click(tweetLater);
+        $(".tweetnow-container, .tweetlater-container").click(close);
+        $(".tweet-buttons p").click(open);
     }
 
     function setup() {
