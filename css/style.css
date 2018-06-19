@@ -203,16 +203,12 @@ form > button {
 form button:hover {
     background-color: #1da1f2;
 }
+form > button.success {
+    background-color: #22c570;
+    animation: SUCCESS 2s;
+}
 
 @-webkit-keyframes OPEN-CONTAINER {
-    0%   { opacity: 0; }
-    100% { opacity: 1; }
-}
-@-moz-keyframes OPEN-CONTAINER {
-    0%   { opacity: 0; }
-    100% { opacity: 1; }
-}
-@-o-keyframes OPEN-CONTAINER {
     0%   { opacity: 0; }
     100% { opacity: 1; }
 }
@@ -222,16 +218,6 @@ form button:hover {
 }
 
 @-webkit-keyframes OPEN-CONTAINER-FORM {
-    0%   { transform: translateY(1000px); }
-    70%   { transform: translateY(1000px); }
-    100% { transform: translateY(0px); }
-}
-@-moz-keyframes OPEN-CONTAINER-FORM {
-    0%   { transform: translateY(1000px); }
-    70%   { transform: translateY(1000px); }
-    100% { transform: translateY(0px); }
-}
-@-o-keyframes OPEN-CONTAINER-FORM {
     0%   { transform: translateY(1000px); }
     70%   { transform: translateY(1000px); }
     100% { transform: translateY(0px); }
@@ -247,16 +233,6 @@ form button:hover {
     70%   { opacity: 1; }
     100% { opacity: 0; }
 }
-@-moz-keyframes CLOSE-CONTAINER {
-    0%   { opacity: 1; }
-    70%   { opacity: 1; }
-    100% { opacity: 0; }
-}
-@-o-keyframes CLOSE-CONTAINER {
-    0%   { opacity: 1; }
-    70%   { opacity: 1; }
-    100% { opacity: 0; }
-}
 @keyframes CLOSE-CONTAINER {
     0%   { opacity: 1; }
     70%   { opacity: 1; }
@@ -267,15 +243,32 @@ form button:hover {
     0%   { transform: translateY(0px); }
     100% { transform: translateY(1000px); }
 }
-@-moz-keyframes CLOSE-CONTAINER-FORM {
-    0%   { transform: translateY(0px); }
-    100% { transform: translateY(1000px); }
-}
-@-o-keyframes CLOSE-CONTAINER-FORM {
-    0%   { transform: translateY(0px); }
-    100% { transform: translateY(1000px); }
-}
 @keyframes CLOSE-CONTAINER-FORM {
     0%   { transform: translateY(0px); }
     100% { transform: translateY(1000px); }
+}
+
+@-webkit-keyframes SUCCESS {
+    from,
+    50%,
+    to {
+        opacity: 1;
+    }
+
+    25%,
+    75% {
+        opacity: 0;
+    }
+}
+@keyframes SUCCESS {
+    from,
+    50%,
+    to {
+        opacity: 1;
+    }
+
+    25%,
+    75% {
+        opacity: 0;
+    }
 }

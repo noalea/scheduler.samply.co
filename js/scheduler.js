@@ -38,6 +38,13 @@ var scheduler = (function () {
         .done(function(data) {
             var d = JSON.parse(data);
             console.log('Data:', d);
+            reset("now");
+            $(".tweetnow button").html("Tweeted Successfully!");
+            $(".tweetnow button").addClass("success");
+            setTimeout(function () {
+                $(".tweetnow button").html("Tweet");
+                $(".tweetnow button").removeClass("success");
+            }, 3000);
         })
         .fail(function(err) {
             console.log(err);
@@ -75,6 +82,13 @@ var scheduler = (function () {
         .done(function(data) {
             var d = JSON.parse(data);
             console.log('Data:', d);
+            reset("later");
+            $(".tweetlater button").html("Tweet Scheduled!");
+            $(".tweetlater button").addClass("success");
+            setTimeout(function () {
+                $(".tweetlater button").html("Tweet");
+                $(".tweetlater button").removeClass("success");
+            }, 3000);
         })
         .fail(function(err) {
             console.log(err);
@@ -96,6 +110,21 @@ var scheduler = (function () {
             setTimeout(function () {
                 $("." + target).removeClass("open close");
             }, 2000);
+        }
+    }
+    
+    function reset(f) {
+        switch (f) {
+            case "now":
+                $('form.tweetnow').trigger("reset");
+                pond.restoreElement();
+                pond = FilePond.create( document.querySelector('.tweetnow input[type="file"]') );
+                break;
+            case "later":
+                $('form.tweetlater').trigger("reset");
+                pond2.restoreElement();
+                pond2 = FilePond.create( document.querySelector('.tweetlater input[type="file"]') );
+                break;
         }
     }
 
