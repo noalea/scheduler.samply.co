@@ -12,6 +12,7 @@ require_once 'php/functions.php'
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title>samply.scheduler</title>
     <link rel="icon" href="favicon.png" type="image/png" sizes="32x32">
+    <link rel="stylesheet" href="css/fontawesome-all.min.css">
     <link href="css/filepond.css" rel="stylesheet">
     <link rel="stylesheet" href="css/flatpickr.min.css">
     <link rel="stylesheet" href="css/style.css">

@@ -1,1 +1,1 @@
-<a href="php/twitter_login.php">Sign in to Twitter</a>
+<a class="signin-btn btnhover" href="php/twitter_login.php">Sign in to Twitter <i class="fab fa-twitter"></i></a>
