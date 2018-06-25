@@ -13,6 +13,7 @@ $status = $receivedData->status;
 $images = $receivedData->images;
 $day = $receivedData->day;
 $time = $receivedData->time;
+$timezone = $receivedData->timezone;
 
 session_start();
 
@@ -41,8 +42,8 @@ foreach ($images as $key => $img) {
 }
 
 // add schedule info
-$insert = "INSERT INTO TweetSchedule (uid, status, media, on_day, on_time)
-                  VALUES ('$uid', '$status', '$media', '$day', '$time')";
+$insert = "INSERT INTO TweetSchedule (uid, status, media, on_day, on_time, timezone)
+                  VALUES ('$uid', '$status', '$media', '$day', '$time', '$timezone')";
 mysqli_query($db, $insert);
 
 echo json_encode('Scheduled');

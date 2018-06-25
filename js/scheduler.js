@@ -71,7 +71,8 @@ var scheduler = (function () {
             status: status,
             images: images,
             day: day,
-            time: time
+            time: time,
+            timezone: Intl.DateTimeFormat().resolvedOptions().timeZone
         });
 
         $.ajax({
