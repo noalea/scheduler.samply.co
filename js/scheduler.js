@@ -95,6 +95,20 @@ var scheduler = (function () {
             console.log(err);
         });
     }
+    
+    function getScheduledTweets() {
+        $.ajax({
+            type: 'GET',
+            url: './php/getScheduledTweets.php'
+        })
+        .done(function(data) {
+            var d = JSON.parse(data);
+            console.log('Scheduled Tweets:', d);
+        })
+        .fail(function(err) {
+            console.log(err);
+        });
+    }
 
     function open(e) {
         var id, name;
@@ -144,6 +158,9 @@ var scheduler = (function () {
             altFormat: "F j, Y H:i",
             minDate: "today"
         });
+        if ($(".scheduled-tweets")[0] !== undefined) {
+            getScheduledTweets();
+        }
     }
 
     return {
