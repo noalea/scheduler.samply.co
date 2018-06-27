@@ -14,7 +14,8 @@ $user = $_COOKIE['screen_name'];
 
 $select = "SELECT S.*
            FROM TweetSchedule S, Users U
-           WHERE U.t_username='$user' AND U.uid=S.uid";
+           WHERE U.t_username='$user' AND U.uid=S.uid
+           ORDER BY S.on_day, S.on_time";
 $result = mysqli_query($db, $select);
 
 while ($row = mysqli_fetch_assoc($result)) {
