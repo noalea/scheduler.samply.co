@@ -13,6 +13,27 @@ var pond2 = FilePond.create( document.querySelector('.tweetlater input[type="fil
 
 var scheduler = (function () {
 
+    function organizeSchedule(d) {
+        var sections = [];
+        var prev = d[2][0];
+        var day = "<h1>" + d[2][0] + "</h1>";
+        sections.push(day);
+        for (var i = 0; i < d[2].length; i++) {
+            var curr = d[2][i];
+            if (prev != curr) {
+                prev = curr;
+                day = "<h1>" + d[2][i] + "</h1>";
+                sections.push(day);
+            }
+            var info = "<p>" + d[0][i] + "</p>";
+            sections.push(info);
+        }
+        for (var j = 0; j < sections.length; j++) {
+            $(sections[j]).appendTo(".scheduled-tweets");
+        }
+        console.log(sections);
+    }
+
     function tweetNow(e) {
         e.preventDefault();
         var status, data, images = [];
@@ -103,7 +124,7 @@ var scheduler = (function () {
         })
         .done(function(data) {
             var d = JSON.parse(data);
-            console.log('Scheduled Tweets:', d);
+            organizeSchedule(d);
         })
         .fail(function(err) {
             console.log(err);
