@@ -27,9 +27,10 @@ while ($row = mysqli_fetch_assoc($result)) {
     $t_username[] = $row['t_username'];
     $name[] = $row['name'];
     $picture[] = $row['picture'];
+    $tsid[] = $row['tsid'];
 }
 
-$arr = array($status, $media, $on_day, $on_time, $timezone, $t_username, $name, $picture);
+$arr = array($status, $media, $on_day, $on_time, $timezone, $t_username, $name, $picture, $tsid);
 
 
 echo json_encode($arr);
