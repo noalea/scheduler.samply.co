@@ -17,6 +17,15 @@ require_once 'php/functions.php'
     <link href="css/filepond.css" rel="stylesheet">
     <link rel="stylesheet" href="css/flatpickr.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-92969751-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-92969751-2');
+    </script>
 </head>
 <body>
 

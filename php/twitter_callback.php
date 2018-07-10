@@ -90,4 +90,4 @@ setcookie('oauth_token', $token['oauth_token'], time() + (86400 * 30), "/");
 setcookie('oauth_token_secret', $token['oauth_token_secret'], time() + (86400 * 30), "/");
 
 // and redirect
-header('Location: http://codeyourfreedom.com/scheduler/');
+header('Location: http://scheduler.samply.co/');

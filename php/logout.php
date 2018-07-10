@@ -13,4 +13,4 @@ session_start();
 session_destroy();
 session_unset();
 
-header('Location: http://codeyourfreedom.com/scheduler/');
+header('Location: http://scheduler.samply.co/');
