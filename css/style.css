@@ -178,7 +178,10 @@ form > h2 {
     font-weight: 600;
     margin-top: 0;
 }
-form > input[type="text"] {
+form > input {
+    -webkit-appearance: textfield;
+    -moz-appearance: textfield;
+    appearance: textfield;
     border-radius: 8px;
     border-color: #1B95E0;
     padding: 8px;
@@ -187,6 +190,7 @@ form > input[type="text"] {
     width: 100%;
     font-size: 1rem;
     margin-bottom: 26px;
+    height: 40px;
 }
 form > button {
     border-radius: 100px;
@@ -286,6 +290,36 @@ form > button.success {
 .delete-tweet > span:nth-of-type(2) {
     transform: rotate(-45deg) translateY(-1px);
 }
+
+@media (max-width: 500px) {
+    .container {
+        padding: 20px;
+    }
+    .user-bar {
+        flex-wrap: wrap;
+    }
+    .user-bar p {
+        font-size: 1rem;
+    }
+    .user-bar span {
+        font-size: 0.8rem
+    }
+    img.prof-pic {
+        width: 38px;
+    }
+    .user-bar .logout {
+        margin-left: 25px;
+        font-size: 0.8rem;
+    }
+    #tweetnow-btn {
+        margin-right: 15px;
+    }
+    #tweetnow-btn, #tweetlater-btn {
+        font-size: 1rem;
+        padding: 6px 12px;
+    }
+}
+
 
 /*ANIMATIONS*/
 
