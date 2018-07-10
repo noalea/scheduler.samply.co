@@ -10,6 +10,7 @@ require_once 'php/functions.php'
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>samply.scheduler</title>
     <link rel="icon" href="favicon.png" type="image/png" sizes="32x32">
     <link rel="stylesheet" href="css/fontawesome-all.min.css">
