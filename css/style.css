@@ -269,7 +269,11 @@ form > button.success {
     justify-content: center;
     padding-left: 1px;
     cursor: pointer;
+<<<<<<< HEAD
     opacity: 0.4;
+=======
+    opacity: 0.5;
+>>>>>>> 554c9e3a6d3b24f8da8d2bdf34a5752dfd8d378a
 }
 .delete-tweet:hover {
     opacity: 1;
