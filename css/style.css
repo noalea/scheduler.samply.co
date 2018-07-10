@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Work+Sans:300,400,500,600,700');
 @font-face {
     font-family: "Segoe UI";
-    src: url("fonts/Segoe%20UI.ttf") format("truetype");
+    src: url("../fonts/Segoe-UI.ttf") format("truetype");
 }
 
 * {
@@ -233,7 +233,7 @@ form > button.success {
     display: flex;
 }
 .tweet-preview p {
-    font-family: "Segoe UI";
+    font-family: 'Segoe UI', sans-serif;
     margin: 0;
     font-size: 14px;
     line-height: 20px;
@@ -253,7 +253,7 @@ form > button.success {
     margin-right: 62px;
 }
 .tweet-preview .bottom > img:last-of-type {
-    margni-right: 0;
+    margin-right: 0;
 }
 .delete-tweet {
     position: absolute;
@@ -269,11 +269,7 @@ form > button.success {
     justify-content: center;
     padding-left: 1px;
     cursor: pointer;
-<<<<<<< HEAD
-    opacity: 0.4;
-=======
     opacity: 0.5;
->>>>>>> 554c9e3a6d3b24f8da8d2bdf34a5752dfd8d378a
 }
 .delete-tweet:hover {
     opacity: 1;
