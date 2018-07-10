@@ -104,6 +104,7 @@ img.prof-pic {
     bottom: 0;
     right: 0;
     background: rgba(255, 255, 255, 0.9);
+    z-index: 999;
 }
 .tweetnow-container.open,
 .tweetlater-container.open {
@@ -317,6 +318,9 @@ form > button.success {
     #tweetnow-btn, #tweetlater-btn {
         font-size: 1rem;
         padding: 6px 12px;
+    }
+    .tweet-preview .bottom img {
+        margin-right: 35px;
     }
 }
 
