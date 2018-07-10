@@ -1,2 +1,4 @@
 **/php/db
 **/php/config.php
+error_log
+.DS_Store
