@@ -50,6 +50,7 @@ require_once 'php/functions.php'
 <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 <script src="js/prettydate.js"></script>
 <script src="js/js.cookie.min.js"></script>
+<script src="js/moment.min.js"></script>
 <script src="js/scheduler.js"></script>
 
 </body>

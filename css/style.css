@@ -224,6 +224,7 @@ form > button.success {
     border-radius: 3px;
     margin-bottom: 10px;
     position: relative;
+    margin-top: 40px;
 }
 .tweet-preview .left {
     width: 58px;
@@ -259,6 +260,12 @@ form > button.success {
 }
 .tweet-preview .bottom > img:last-of-type {
     margin-right: 0;
+}
+.tweet-preview .scheduled-for {
+    position: absolute;
+    top: -25px;
+    color: #1b95df;
+    font-weight: 600;
 }
 .delete-tweet {
     position: absolute;

@@ -49,8 +49,11 @@ var scheduler = (function () {
                     day = "<h1>" + dateToWords(d[2][i]) + "</h1>";
                     sections.push(day);
                 }
+                var scheduledFor = moment(d[2][i] + ' ' + d[3][i]).format('MM/DD/YYYY h:mma');
+                var collage = CollageMaker();
                 var info = "<div class='tweet-preview' id='tweet-"+ d[8][i] +"'>" +
                                 "<div class='delete-tweet'><span></span><span></span></div>" +
+                                "<div class='scheduled-for'>" + scheduledFor.split(' ')[1] + "</div>" +
                                 "<div class='left'><img src='"+ d[7][i] +"' /></div>" +
                                 "<div class='right'>" +
                                     "<div class='top'>" +
@@ -73,7 +76,6 @@ var scheduler = (function () {
             for (var j = 0; j < sections.length; j++) {
                 $(sections[j]).appendTo(".scheduled-tweets");
             }
-            console.log(sections);
         } else {
             $("<p class='empty-scheduled'>You have no scheduled tweets yet! You should start...</p>").appendTo(".scheduled-tweets");
         }
