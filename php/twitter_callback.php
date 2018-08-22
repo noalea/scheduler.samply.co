@@ -66,7 +66,7 @@ if (mysqli_num_rows($check) > 0){
     // user exists : update db
     $update = "UPDATE Users 
                SET t_username='$user->screen_name', name='$user->name', picture='$user->profile_image_url'
-               WHERE oauth_token='".$oauth_token."'";
+               WHERE uid='".$uid."'";
     mysqli_query($db, $update);
 } else {
     // user is new : insert info into db
