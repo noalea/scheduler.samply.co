@@ -147,7 +147,7 @@ img.prof-pic {
     font-family: 'Work Sans', sans-serif;
     color: white;
     margin-top: 10px;
-    background: #1b95e0;
+    background: #1e82bf;
     display: inline-block;
     border: 1px solid #1787cc;
     -webkit-box-shadow: 1px 2px 10px 0px rgba(27, 149, 224, 0.4);
@@ -332,7 +332,7 @@ form > button.success {
 .collage.c-4 > div:nth-child(2),
 .collage.c-4 > div:nth-child(3),
 .collage.c-4 > div:nth-child(4) {
-    height: 33.33%;
+    height: 33.3333333333%;
 }
 
 @media (max-width: 700px) {
@@ -363,7 +363,7 @@ form > button.success {
     }
     .tweet-buttons {
         margin-top: 30px;
-        margin-bottom: 30px;
+        margin-bottom: 40px;
     }
     #tweetnow-btn, #tweetlater-btn {
         width: 100%;
