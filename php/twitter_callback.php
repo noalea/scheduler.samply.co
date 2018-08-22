@@ -68,6 +68,12 @@ if (mysqli_num_rows($check) > 0){
                SET t_username='$user->screen_name', name='$user->name', picture='$user->profile_image_url'
                WHERE uid='".$uid."'";
     mysqli_query($db, $update);
+
+    // user exists : update tokens
+    $updateTokens = "UPDATE TwitterTokens 
+                 SET oauth_token='$oauth_token', oauth_token_secret='$oauth_token_secret'
+                 WHERE uid='".$uid."'";
+    mysqli_query($db, $updateTokens);
 } else {
     // user is new : insert info into db
     $insert = "INSERT INTO Users (t_username, name, picture)

@@ -11,7 +11,7 @@
 
 <div class="tweet-buttons">
     <p id="tweetnow-btn" class="btnhover">Live Tweet</p>
-    <p id="tweetlater-btn" class="btnhover">Schedule A Tweet</p>
+    <p id="tweetlater-btn" class="btnhover">Schedule Tweet</p>
 </div>
 
 
@@ -26,7 +26,7 @@
 
 <div class="tweetlater-container">
     <form action="<?php echo $url; ?>" class="tweetlater" method="post" enctype="multipart/form-data">
-        <h2>Schedule A Tweet</h2>
+        <h2>Schedule Tweet</h2>
         <input type="text" name="status" placeholder="What's happening?">
         <input type="file" name="filepond[]" multiple>
         <input type="text" name="date" class="datetime-picker" placeholder="Pick a time.">

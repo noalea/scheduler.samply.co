@@ -92,7 +92,7 @@ while ($loopTimezones = mysqli_fetch_assoc($resultTimezones)) {
 
 }
 
-$data = array($tsid, $uid, $status, $medias, $ontime, $day, $time);
+$data = array($tsid, $uid, $status, $medias, $ontime, $day, $time, $rowTokens);
 
 echo "Data: ";
 print_r($data);
