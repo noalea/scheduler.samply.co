@@ -1,1 +1,1 @@
-# Simple Scheduler (in progress)
+# Simple Twitter Scheduler (live)
