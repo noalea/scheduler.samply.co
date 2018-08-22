@@ -34,6 +34,42 @@ var scheduler = (function () {
         return prettyDate;
     }
 
+    function CollageMaker(imagesList) {
+        var imagesArr = imagesList.split(","),
+            collage = "";
+        if (imagesList !== "") {
+          switch (imagesArr.length) {
+            case 1:
+              collage = "<div class='collage c-1'>" +
+                "<div style='background-image: url("+ imagesArr[0] +")'></div>" +
+                "</div>";
+              break;
+            case 2:
+              collage = "<div class='collage c-2'>" +
+                "<div style='background-image: url("+ imagesArr[0] +")'></div>" +
+                "<div style='background-image: url("+ imagesArr[1] +")'></div>" +
+                "</div>";
+              break;
+            case 3:
+              collage = "<div class='collage c-3'>" +
+                "<div style='background-image: url("+ imagesArr[0] +")'></div>" +
+                "<div style='background-image: url("+ imagesArr[1] +")'></div>" +
+                "<div style='background-image: url("+ imagesArr[2] +")'></div>" +
+                "</div>";
+              break;
+            case 4:
+              collage = "<div class='collage c-4'>" +
+                "<div style='background-image: url("+ imagesArr[0] +")'></div>" +
+                "<div style='background-image: url("+ imagesArr[1] +")'></div>" +
+                "<div style='background-image: url("+ imagesArr[2] +")'></div>" +
+                "<div style='background-image: url("+ imagesArr[3] +")'></div>" +
+                "</div>";
+              break;
+          }
+        }
+        return collage;
+    }
+
     function organizeSchedule(d) {
         $(".scheduled-tweets").empty();
         var sections = [];
@@ -50,7 +86,7 @@ var scheduler = (function () {
                     sections.push(day);
                 }
                 var scheduledFor = moment(d[2][i] + ' ' + d[3][i]).format('MM/DD/YYYY h:mma');
-                var collage = CollageMaker();
+                var collage = CollageMaker(d[1][i]);
                 var info = "<div class='tweet-preview' id='tweet-"+ d[8][i] +"'>" +
                                 "<div class='delete-tweet'><span></span><span></span></div>" +
                                 "<div class='scheduled-for'>" + scheduledFor.split(' ')[1] + "</div>" +
@@ -62,6 +98,7 @@ var scheduler = (function () {
                                     "</div>" +
                                     "<div class='content'>" +
                                         "<p>"+ d[0][i] +"</p>" +
+                                        collage +
                                     "</div>" +
                                     "<div class='bottom'>" +
                                         "<img src='images/respond.png' />" +
@@ -90,7 +127,7 @@ var scheduler = (function () {
         $('.tweetnow .filepond--file-wrapper legend').each(function(i, obj) {
             var fileTitle = $(obj).html(), fileURL;
             fileTitle = encodeURIComponent(fileTitle.trim());
-            fileURL = "http://codeyourfreedom.com/scheduler/php/tmp/1/" + fileTitle;
+            fileURL = "http://scheduler.samply.co/php/tmp/1/" + fileTitle;
             images.push(fileURL);
         });
 
@@ -128,7 +165,7 @@ var scheduler = (function () {
         $('.tweetlater .filepond--file-wrapper legend').each(function(i, obj) {
             var fileTitle = $(obj).html(), fileURL;
             fileTitle = encodeURIComponent(fileTitle.trim());
-            fileURL = "http://codeyourfreedom.com/scheduler/php/tmp/1/" + fileTitle;
+            fileURL = "http://scheduler.samply.co/php/tmp/1/" + fileTitle;
             images.push(fileURL);
         });
 

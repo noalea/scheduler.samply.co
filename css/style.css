@@ -299,6 +299,48 @@ form > button.success {
     transform: rotate(-45deg) translateY(-1px);
 }
 
+.collage {
+    border-radius: 5px;
+    overflow: hidden;
+    margin-top: 10px;
+    width: 100%;
+    height: 400px;
+}
+.collage > div {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100%;
+    display: inline-block;
+    width: 30%;
+    float: left;
+}
+.collage.c-1 > div:first-child {
+    width: 100%;
+}
+.collage.c-2 > div {
+    width: 50%;
+}
+.collage.c-3 > div:first-child,
+.collage.c-4 > div:first-child {
+    width: 70%;
+}
+.collage.c-3 > div:nth-child(2),
+.collage.c-3 > div:nth-child(3) {
+    height: 50%;
+}
+.collage.c-4 > div:nth-child(2),
+.collage.c-4 > div:nth-child(3),
+.collage.c-4 > div:nth-child(4) {
+    height: 33.33%;
+}
+
+@media (max-width: 700px) {
+    .collage {
+        height: 300px;
+    }
+}
+
 @media (max-width: 500px) {
     .container {
         padding: 20px;
@@ -319,18 +361,28 @@ form > button.success {
         margin-left: 25px;
         font-size: 0.8rem;
     }
-    #tweetnow-btn {
-        margin-right: 15px;
+    .tweet-buttons {
+        margin-top: 30px;
+        margin-bottom: 30px;
     }
     #tweetnow-btn, #tweetlater-btn {
-        font-size: 1rem;
-        padding: 6px 12px;
+        width: 100%;
+        display: block;
+        margin-top: 0;
     }
     .tweet-preview .bottom img {
         margin-right: 35px;
     }
+    .collage {
+        height: 200px;
+    }
 }
 
+@media (max-width: 400px) {
+    .collage {
+        height: 150px;
+    }
+}
 
 /*ANIMATIONS*/
 
